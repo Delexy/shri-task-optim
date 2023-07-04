@@ -30,10 +30,10 @@
       <div class="footer__copyright">© 1997–2023 ООО «Яндекс»</div>
     </footer>
 
-    <script  src="vendors/react.production.min.js"></script>
-    <script src="vendors/react-dom.production.min.js"></script>
-    <script src="vendors/babel.min.js"></script>
-    <script type="text/babel">
+    <script defer src="vendors/react.production.min.js"></script>
+    <script defer src="vendors/react-dom.production.min.js"></script>
+    <script defer src="vendors/babel.min.js"></script>
+    <script defer type="text/babel">
       function Header() {
         let [expanded, setExpanded] = React.useState(false);
         let [toggled, setToggled] = React.useState(false);
@@ -226,9 +226,6 @@
           ],
         },
       };
-      for (let i = 0; i < 6; ++i) {
-        TABS.all.items = [...TABS.all.items, ...TABS.all.items];
-      }
       const TABS_KEYS = Object.keys(TABS);
 
       function Main() {
