@@ -188,15 +188,18 @@ function Main() {
   const initedRef = React.useRef(false);
   const [containerWidth, setContainerWidth] = React.useState(0);
   const [activeTab, setActiveTab] = React.useState("");
+
   React.useEffect(() => {
     if (!activeTab && !initedRef.current) {
       initedRef.current = true;
       setActiveTab(new URLSearchParams(location.search).get("tab") || "all");
     }
   }, [activeTab, initedRef]);
+
   const onSelectInput = (event) => {
     setActiveTab(event.target.value);
   };
+
   const onArrowCLick = React.useCallback(() => {
     const scroller = ref.current.querySelector(".section__panel:not(.section__panel_hidden)");
     if (scroller) {
@@ -206,11 +209,12 @@ function Main() {
       });
     }
   }, [ref]);
+
   React.useEffect(() => {
 		if(ref?.current && ref.current.offsetWidth != containerWidth) {
 			setContainerWidth(ref.current.offsetWidth);
 		}
-	}, []);
+	}, [ref]);
 
   return (
     <main className="main">
@@ -329,7 +333,6 @@ const ListingMemo = React.memo(function Listing(props) {
   );
 });
 
-window.addEventListener("load", () => {
-  const root = document.getElementById("app");
-  ReactDOM.render(/*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement(Header, null), /*#__PURE__*/ React.createElement(Main, null)), root);
-});
+const root = document.getElementById("app");
+ReactDOM.render(/*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement(Header, null), /*#__PURE__*/ React.createElement(Main, null)), root);
+
