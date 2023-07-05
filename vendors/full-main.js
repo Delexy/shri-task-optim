@@ -303,7 +303,7 @@ const ListingMemo = React.memo(function Listing(props) {
     if (newHasRightScroll !== hasRightScroll) {
       setHasRightScroll(newHasRightScroll);
     }
-  }, [props.activeTab]);
+  });
   return (
     <>
       {TABS_KEYS.map((key) => (
