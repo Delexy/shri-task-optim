@@ -2,12 +2,12 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function Header() {
   let [expanded, setExpanded] = React.useState(false);
   let [toggled, setToggled] = React.useState(false);
-  const onClick = () => {
+  const onClick = React.useCallback(() => {
     if (!toggled) {
       setToggled(true);
     }
     setExpanded(!expanded);
-  };
+  }, [expanded, toggled]);
   return /*#__PURE__*/React.createElement("header", {
     className: "header"
   }, /*#__PURE__*/React.createElement("a", {
@@ -178,7 +178,7 @@ const TABS = {
   }
 };
 for (let i = 0; i < 6; ++i) {
-  TABS.all.items = [...TABS.all.items, ...TABS.all.items];
+  TABS.all.items = TABS.all.items.concat(TABS.all.items);
 }
 const TABS_KEYS = Object.keys(TABS);
 function Main() {
@@ -191,7 +191,7 @@ function Main() {
       initedRef.current = true;
       setActiveTab(new URLSearchParams(location.search).get('tab') || 'all');
     }
-  });
+  }, [activeTab, initedRef]);
   const onSelectInput = event => {
     setActiveTab(event.target.value);
   };
@@ -201,13 +201,13 @@ function Main() {
   };
   React.useEffect(() => {
     const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-    const sumHeight = sizes.reduce((acc, item) => acc + item.height, 0);
+    
     const newHasRightScroll = sumWidth > ref.current.offsetWidth;
     if (newHasRightScroll !== hasRightScroll) {
       setHasRightScroll(newHasRightScroll);
     }
-  });
-  const onArrowCLick = () => {
+  }, [activeTab]);
+  const onArrowCLick = React.useCallback(() => {
     const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
     if (scroller) {
       scroller.scrollTo({
@@ -215,7 +215,7 @@ function Main() {
         behavior: 'smooth'
       });
     }
-  };
+  }, [ref]);
   return /*#__PURE__*/React.createElement("main", {
     className: "main"
   }, /*#__PURE__*/React.createElement("section", {
