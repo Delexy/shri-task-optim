@@ -177,7 +177,6 @@ const TABS = {
   },
 };
 for (let i = 0; i < 6; ++i) {
-  console.log(TABS.all.items.length);
   TABS.all.items = TABS.all.items.concat(TABS.all.items);
 }
 
@@ -206,10 +205,10 @@ function Main() {
     }
   }, [ref]);
   React.useEffect(() => {
-		if(ref?.current) {
+		if(ref?.current && ref.current.offsetWidth != containerWidth) {
 			setContainerWidth(ref.current.offsetWidth);
 		}
-	}, [activeTab]);
+	}, []);
 
   return (
     <main className="main">

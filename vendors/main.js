@@ -163,7 +163,6 @@ const TABS = {
   }
 };
 for (let i = 0; i < 6; ++i) {
-  console.log(TABS.all.items.length);
   TABS.all.items = TABS.all.items.concat(TABS.all.items);
 }
 const TABS_KEYS = Object.keys(TABS);
@@ -191,10 +190,10 @@ function Main() {
     }
   }, [ref]);
   React.useEffect(() => {
-    if (ref !== null && ref !== void 0 && ref.current) {
+    if (ref !== null && ref !== void 0 && ref.current && ref.current.offsetWidth != containerWidth) {
       setContainerWidth(ref.current.offsetWidth);
     }
-  }, [activeTab]);
+  }, []);
   return /*#__PURE__*/React.createElement("main", {
     className: "main"
   }, /*#__PURE__*/React.createElement("section", {
