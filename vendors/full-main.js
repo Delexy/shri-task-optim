@@ -196,9 +196,9 @@ function Main() {
     }
   }, [activeTab, initedRef]);
 
-  const onSelectInput = (event) => {
+  const onSelectInput = React.useCallback((event) => {
     setActiveTab(event.target.value);
-  };
+  });
 
   const onArrowCLick = React.useCallback(() => {
     const scroller = ref.current.querySelector(".section__panel:not(.section__panel_hidden)");
