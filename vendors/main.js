@@ -16,12 +16,12 @@ function Header() {
     "aria-label": "\u042F\u043D\u0434\u0435\u043A\u0441.\u0414\u043E\u043C"
   }), /*#__PURE__*/React.createElement("button", {
     className: "header__menu",
-    "aria-expanded": expanded ? 'true' : 'false',
+    "aria-expanded": expanded ? "true" : "false",
     onClick: onClick
   }, /*#__PURE__*/React.createElement("span", {
     className: "header__menu-text a11y-hidden"
-  }, expanded ? 'Закрыть меню' : 'Открыть меню')), /*#__PURE__*/React.createElement("ul", {
-    className: 'header__links' + (expanded ? ' header__links_opened' : '') + (toggled ? ' header__links-toggled' : '')
+  }, expanded ? "Закрыть меню" : "Открыть меню")), /*#__PURE__*/React.createElement("ul", {
+    className: "header__links" + (expanded ? " header__links_opened" : "") + (toggled ? " header__links-toggled" : "")
   }, /*#__PURE__*/React.createElement("li", {
     className: "header__item"
   }, /*#__PURE__*/React.createElement("a", {
@@ -41,23 +41,8 @@ function Header() {
   }, "\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0438"))));
 }
 function Event(props) {
-  const ref = React.useRef();
-  const {
-    onSize
-  } = props;
-  React.useEffect(() => {
-    const width = ref.current.offsetWidth;
-    const height = ref.current.offsetHeight;
-    if (onSize) {
-      onSize({
-        width,
-        height
-      });
-    }
-  });
   return /*#__PURE__*/React.createElement("li", {
-    ref: ref,
-    className: 'event' + (props.slim ? ' event_slim' : '')
+    className: "event" + (props.slim ? " event_slim" : "")
   }, /*#__PURE__*/React.createElement("button", {
     className: "event__button"
   }, /*#__PURE__*/React.createElement("span", {
@@ -72,150 +57,144 @@ function Event(props) {
 }
 const TABS = {
   all: {
-    title: 'Все',
+    title: "Все",
     items: [{
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Yeelight LED Smart Bulb',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Yeelight LED Smart Bulb",
+      subtitle: "Включено"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'D-Link Omna 180 Cam',
-      subtitle: 'Включится в 17:00'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "D-Link Omna 180 Cam",
+      subtitle: "Включится в 17:00"
     }, {
-      icon: 'temp',
-      iconLabel: 'Температура',
-      title: 'Elgato Eve Degree Connected',
-      subtitle: 'Выключено до 17:00'
+      icon: "temp",
+      iconLabel: "Температура",
+      title: "Elgato Eve Degree Connected",
+      subtitle: "Выключено до 17:00"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'LIFX Mini Day & Dusk A60 E27',
-      subtitle: 'Включится в 17:00'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "LIFX Mini Day & Dusk A60 E27",
+      subtitle: "Включится в 17:00"
     }, {
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Mi Air Purifier 2S',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Mi Air Purifier 2S",
+      subtitle: "Включено"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'Philips Zhirui',
-      subtitle: 'Включено'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "Philips Zhirui",
+      subtitle: "Включено"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'Philips Zhirui',
-      subtitle: 'Включено'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "Philips Zhirui",
+      subtitle: "Включено"
     }, {
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Mi Air Purifier 2S',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Mi Air Purifier 2S",
+      subtitle: "Включено"
     }]
   },
   kitchen: {
-    title: 'Кухня',
+    title: "Кухня",
     items: [{
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Yeelight LED Smart Bulb',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Yeelight LED Smart Bulb",
+      subtitle: "Включено"
     }, {
-      icon: 'temp',
-      iconLabel: 'Температура',
-      title: 'Elgato Eve Degree Connected',
-      subtitle: 'Выключено до 17:00'
+      icon: "temp",
+      iconLabel: "Температура",
+      title: "Elgato Eve Degree Connected",
+      subtitle: "Выключено до 17:00"
     }]
   },
   hall: {
-    title: 'Зал',
+    title: "Зал",
     items: [{
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'Philips Zhirui',
-      subtitle: 'Выключено'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "Philips Zhirui",
+      subtitle: "Выключено"
     }, {
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Mi Air Purifier 2S',
-      subtitle: 'Выключено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Mi Air Purifier 2S",
+      subtitle: "Выключено"
     }]
   },
   lights: {
-    title: 'Лампочки',
+    title: "Лампочки",
     items: [{
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'D-Link Omna 180 Cam',
-      subtitle: 'Включится в 17:00'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "D-Link Omna 180 Cam",
+      subtitle: "Включится в 17:00"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'LIFX Mini Day & Dusk A60 E27',
-      subtitle: 'Включится в 17:00'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "LIFX Mini Day & Dusk A60 E27",
+      subtitle: "Включится в 17:00"
     }, {
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Mi Air Purifier 2S',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Mi Air Purifier 2S",
+      subtitle: "Включено"
     }, {
-      icon: 'light',
-      iconLabel: 'Освещение',
-      title: 'Philips Zhirui',
-      subtitle: 'Включено'
+      icon: "light",
+      iconLabel: "Освещение",
+      title: "Philips Zhirui",
+      subtitle: "Включено"
     }]
   },
   cameras: {
-    title: 'Камеры',
+    title: "Камеры",
     items: [{
-      icon: 'light2',
-      iconLabel: 'Освещение',
-      title: 'Xiaomi Mi Air Purifier 2S',
-      subtitle: 'Включено'
+      icon: "light2",
+      iconLabel: "Освещение",
+      title: "Xiaomi Mi Air Purifier 2S",
+      subtitle: "Включено"
     }]
   }
 };
 for (let i = 0; i < 6; ++i) {
+  console.log(TABS.all.items.length);
   TABS.all.items = TABS.all.items.concat(TABS.all.items);
 }
 const TABS_KEYS = Object.keys(TABS);
 function Main() {
   const ref = React.useRef();
   const initedRef = React.useRef(false);
-  const [activeTab, setActiveTab] = React.useState('');
-  const [hasRightScroll, setHasRightScroll] = React.useState(false);
+  const [containerWidth, setContainerWidth] = React.useState(0);
+  const [activeTab, setActiveTab] = React.useState("");
   React.useEffect(() => {
     if (!activeTab && !initedRef.current) {
       initedRef.current = true;
-      setActiveTab(new URLSearchParams(location.search).get('tab') || 'all');
+      setActiveTab(new URLSearchParams(location.search).get("tab") || "all");
     }
   }, [activeTab, initedRef]);
   const onSelectInput = event => {
     setActiveTab(event.target.value);
   };
-  let sizes = [];
-  const onSize = size => {
-    sizes = [...sizes, size];
-  };
-  React.useEffect(() => {
-    const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-    
-    const newHasRightScroll = sumWidth > ref.current.offsetWidth;
-    if (newHasRightScroll !== hasRightScroll) {
-      setHasRightScroll(newHasRightScroll);
-    }
-  }, [activeTab]);
   const onArrowCLick = React.useCallback(() => {
-    const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
+    const scroller = ref.current.querySelector(".section__panel:not(.section__panel_hidden)");
     if (scroller) {
       scroller.scrollTo({
         left: scroller.scrollLeft + 400,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
   }, [ref]);
+  React.useEffect(() => {
+    if (ref !== null && ref !== void 0 && ref.current) {
+      setContainerWidth(ref.current.offsetWidth);
+    }
+  }, [activeTab]);
   return /*#__PURE__*/React.createElement("main", {
     className: "main"
   }, /*#__PURE__*/React.createElement("section", {
@@ -320,33 +299,47 @@ function Main() {
   }, TABS_KEYS.map(key => /*#__PURE__*/React.createElement("li", {
     key: key,
     role: "tab",
-    "aria-selected": key === activeTab ? 'true' : 'false',
-    tabIndex: key === activeTab ? '0' : undefined,
-    className: 'section__tab' + (key === activeTab ? ' section__tab_active' : ''),
+    "aria-selected": key === activeTab ? "true" : "false",
+    tabIndex: key === activeTab ? "0" : undefined,
+    className: "section__tab" + (key === activeTab ? " section__tab_active" : ""),
     id: `tab_${key}`,
     "aria-controls": `panel_${key}`,
     onClick: () => setActiveTab(key)
   }, TABS[key].title)))), /*#__PURE__*/React.createElement("div", {
     className: "section__panel-wrapper",
     ref: ref
-  }, TABS_KEYS.map(key => /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(ListingMemo, {
+    activeTab: activeTab,
+    onArrowCLick: onArrowCLick,
+    containerWidth: containerWidth
+  }))));
+}
+const ListingMemo = React.memo(function Listing(props) {
+  const [hasRightScroll, setHasRightScroll] = React.useState(false);
+  React.useEffect(() => {
+    var _TABS$props$activeTab;
+    const sumWidth = ((_TABS$props$activeTab = TABS[props.activeTab]) === null || _TABS$props$activeTab === void 0 ? void 0 : _TABS$props$activeTab.items.length) * 200 || 0;
+    const newHasRightScroll = sumWidth > props.containerWidth;
+    if (newHasRightScroll !== hasRightScroll) {
+      setHasRightScroll(newHasRightScroll);
+    }
+  }, [props.activeTab]);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, TABS_KEYS.map(key => /*#__PURE__*/React.createElement("div", {
     key: key,
     role: "tabpanel",
-    className: 'section__panel' + (key === activeTab ? '' : ' section__panel_hidden'),
-    "aria-hidden": key === activeTab ? 'false' : 'true',
+    className: "section__panel" + (key === props.activeTab ? "" : " section__panel_hidden"),
+    "aria-hidden": key === props.activeTab ? "false" : "true",
     id: `panel_${key}`,
     "aria-labelledby": `tab_${key}`
   }, /*#__PURE__*/React.createElement("ul", {
     className: "section__panel-list"
   }, TABS[key].items.map((item, index) => /*#__PURE__*/React.createElement(Event, _extends({
     key: index
-  }, item, {
-    onSize: onSize
-  })))))), hasRightScroll && /*#__PURE__*/React.createElement("div", {
+  }, item)))))), hasRightScroll && /*#__PURE__*/React.createElement("div", {
     className: "section__arrow",
-    onClick: onArrowCLick
-  }))));
-}
+    onClick: props.onArrowCLick
+  }));
+});
 window.addEventListener("load", () => {
   const root = document.getElementById("app");
   ReactDOM.render( /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement(Main, null)), root);
