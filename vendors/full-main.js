@@ -35,7 +35,7 @@ function Header() {
   );
 }
 
-function Event(props) {
+function EventPure(props) {
   return (
     <li className={"event" + (props.slim ? " event_slim" : "")}>
       <button className="event__button">
@@ -46,6 +46,8 @@ function Event(props) {
     </li>
   );
 }
+
+const Event = React.memo(EventPure);
 
 const TABS = {
   all: {
